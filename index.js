@@ -37,6 +37,7 @@ app.listen(port, () => {
 });
 
 async function handleDownload(req, res) {
+	console.log('Downloading...');
 	const file = await File.findById({ _id: req.params.id });
 	if (file.password != null) {
 		if (req.body.password != null) {
